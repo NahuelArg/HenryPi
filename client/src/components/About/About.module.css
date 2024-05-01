@@ -1,0 +1,37 @@
+.aboutContainer {
+    background-color: #202020; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
+    padding: 20px; /* Espaciado interno */
+    justify-content: center;
+}
+
+  .aboutTitle {
+    font-family: 'Roboto Condensed', sans-serif; /* Tipografía similar a la de la serie */
+    font-size: 24px; /* Tamaño de fuente grande */
+    margin-bottom: 20px; /* Espacio inferior */
+  }
+  
+  .contactlink {
+    color: #00cc99; /* Color verde */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 18px; /* Tamaño de fuente */
+    display: flex; /* Para alinear los iconos y el texto horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+  }
+  
+  .contactlink:hover {
+    color: #ffcc00; /* Cambia de color al pasar el mouse */
+  }
+  
+  .contact-icon {
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+  }
+  
+  .whatsapp{
+    color: #25D366;
+   ; /* Color de WhatsApp */
+  }
+  
+  .linkedin {
+    color: #0077B5/* Color de LinkedIn */
+  }

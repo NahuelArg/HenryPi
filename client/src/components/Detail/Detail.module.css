@@ -1,0 +1,42 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+    
+ }
+
+.card {
+    width: 18vm;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 5rem 0;
+    position: relative;
+    border-radius: 0.4rem;
+    margin: 0.5rem;
+}
+.card img{
+    border-radius: 50%;
+}
+
+.details {
+    border: 30px solid black;
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    font-size: 13px;
+    padding: 0.3rem;
+    margin: 0.3rem;
+    border-radius: 10px;
+    text-align: center;
+    color: rgb(203, 15, 18);
+}
+
+.details:hover{
+    transition: all .9s ease;
+    background-size: cover;
+}
