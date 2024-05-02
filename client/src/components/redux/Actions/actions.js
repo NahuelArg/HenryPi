@@ -7,10 +7,10 @@ export const DOG_BY_NAME = "DOG_BY_NAME";
 
 
 export const allDogs = () => {
-  const endpoint = "http://localhost:3001";
+  const endpoint = "http://localhost:3002/dogs";
   return async (dispatch) => {
       try {
-          let response = await axios.get(`${endpoint}/dogs`);
+          let response = await axios.get(endpoint);
           dispatch({
               type: ALL_DOGS,
               payload: response.data
@@ -22,7 +22,7 @@ export const allDogs = () => {
 };
 
 export const dogsById = (id) => {
-  const endpoint = `http://localhost:3001/dogs/${id}`;
+  const endpoint = `http://localhost:3002/dogs/${id}`;
   return async (dispatch) => {
       try {
           await axios.get(endpoint);
@@ -36,7 +36,7 @@ export const dogsById = (id) => {
   };
 };
 export const actionsDogByName = (name) => {
-  const endpoint = `http://localhost:3001/dogs/${name}`;
+  const endpoint = `http://localhost:3002/dogs/${name}`;
   return async (dispatch) => {
       try {
           let response = await axios.get(endpoint);

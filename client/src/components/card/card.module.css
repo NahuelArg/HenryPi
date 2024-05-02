@@ -48,12 +48,7 @@
 
 .secondSection {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #3366ff;
-    height: 25%;
-    width: 100%;
+    flex-wrap: wrap;
 }
 
 .imageContainer {

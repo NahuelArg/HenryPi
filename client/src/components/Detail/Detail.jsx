@@ -1,25 +1,9 @@
 import React from "react";
 import style from "./Detail.module.css"
-import axios from "axios";
-import { useParams } from "react-router-dom";
 import { useState } from "react";
-import { useEffect } from "react";
+
 export default function Detail() {
    const [character, setCharacter] = useState({})
-   const { name } = useParams();
-
-   useEffect(() => {
-       axios(`http://localhost:3001/dogs/${name}`).then(
-          ({ data }) => {
-             if (data.name) {
-                setCharacter(data);
-             } else {
-                window.alert('No hay personajes con ese ID');
-             }
-          }
-       );
-       return setCharacter({});
-    }, [name]);
 
   return (
      <div className={style.container}>
@@ -33,7 +17,7 @@ export default function Detail() {
                <h2>Temperamento | {character.temperaments}</h2>
 
            </div>
-           <img src={character.image} />
+           {/* <img src={character.image} /> */}
         </div>
      </div>
   );
