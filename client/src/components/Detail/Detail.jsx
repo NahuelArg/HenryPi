@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {dogsById} from '../redux/Actions/actions'
 import { useEffect } from "react";
-import axios from "axios";
 
 function DogDetails() {
    const dispatch = useDispatch();

@@ -10,7 +10,7 @@ async function GetDogsName(req, res) {
         let dogByDB = await Dogs.findOne({
             where: Sequelize.where(Sequelize.fn('LOWER', Sequelize.col('name')), name)
         });
-        
+     
         console.log("Perro encontrado en la base de datos local:", dogByDB);
 
         // Si encuentra un resultado en la base de datos local, lo devuelve

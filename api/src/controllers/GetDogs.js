@@ -29,7 +29,7 @@ async function GetDogs(req, res){
                 peso: {
                     min: pesoMin,
                     max: pesoMax
-                },
+               },
                 altura: {
                     min: alturaMin,
                     max: alturaMax

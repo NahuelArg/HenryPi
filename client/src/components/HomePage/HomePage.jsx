@@ -9,6 +9,7 @@ export default function HomePage() {
   const dispatch = useDispatch();
   const todosLosPerros = useSelector((state) => state.allDogs);
   
+  
 
   // Cargar los perros al iniciar
   useEffect(() => {
