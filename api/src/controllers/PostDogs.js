@@ -2,7 +2,7 @@ const axios = require("axios");
 const { Dogs, Temperaments } = require("../db");
 
 async function postDogs(req, res) {
-    const {image, name, height, weight, life_span, temperaments } = req.body;
+    const {image, name, height, weight, life_span, temperaments, id } = req.body;
     try {
         if (!image || !name || !height|| !weight || !life_span || !temperaments) {
             return res.status(402).send({ message: 'Faltan datos' });

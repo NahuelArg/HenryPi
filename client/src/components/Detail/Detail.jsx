@@ -1,24 +1,32 @@
 import React from "react";
-import style from "./Detail.module.css"
-import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {dogsById} from '../redux/Actions/actions'
+import { useEffect } from "react";
+import axios from "axios";
 
-export default function Detail() {
-   const [character, setCharacter] = useState({})
-
+function DogDetails() {
+   const dispatch = useDispatch();
+   const params = useParams();
+  useEffect(() => {
+    dispatch(dogsById(params.id));
+  },[params.id])
+  const myDog = useSelector((state)=>state.detail)
+  console.log(myDog);
   return (
-     <div className={style.container}>
-        <div className={style.card}>
-           <div className={style.details}>
-               <h2>ID | {character.id}</h2>
-               <h2>Name | {character.name}</h2>
-               <h2>Altura | {character.height}</h2>
-               <h2>Peso | {character.weight}</h2>
-               <h2>Años de vida | {character.life_span}</h2>
-               <h2>Temperamento | {character.temperaments}</h2>
-
-           </div>
-           {/* <img src={character.image} /> */}
-        </div>
-     </div>
+    <div>
+      <Link to = "/home">
+         <button>Volver a la pagina principal</button>
+      </Link>
+      <h2>{myDog.nombre}</h2>
+      <img src={myDog.imagen} alt="Perros Bonitos" width='400px' weight="600px"/>
+      <p>ID: {myDog.id}</p>
+      <p>Altura {myDog.altura}</p>
+      <p>Peso  {myDog.peso}</p>
+      <p>Años de vida: {myDog.anosDeVida}</p>
+      <p>Temperamento: {myDog.temperamento}</p>
+    </div>
   );
 }
+
+export default DogDetails;

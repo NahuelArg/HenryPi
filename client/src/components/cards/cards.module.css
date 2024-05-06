@@ -1,12 +1,9 @@
-.div{
-    margin-top: 60px;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    padding: 0;
-    justify-content: center;
+.div{ 
+       background-color: rgb(54, 51, 51);
+    position: absolute;
     align-items: center;
+    padding: 25px;
     display: flex;
-    overflow: auto;
+    justify-content: space-around;
     flex-wrap: wrap;
 }

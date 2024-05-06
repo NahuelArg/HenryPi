@@ -1,16 +1,41 @@
 import { useState } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { getNameDog } from "../redux/Actions/actions"
 
-export default function SearchBar({onSearch}){
-   const [name, setName] = useState("")
+export default function SearchBar(){
+  const searchTerm = useSelector(state => state.searchTerm);
+  const dispatch = useDispatch()
+  const [dog, setDog] = useState({name:''})
 
    const handleChange = (ev) =>{
-      setName(ev.target.value)
+      setDog({name: ev.target.value})
+   }
+   function handleSubmit (){
+    const name = dog.name
+    if(!name){
+      alert('Ingresa un nombre por favor')
+    }else{
+      dispatch(getNameDog(name))
+      //setName('')
+    }
+
    }
 
   return (
     <div>
-      <input type="text" onChange={handleChange} />
-      <button onClick={onSearch(name)}>Buscar</button>
+     <div className="buscador" >
+           
+           <input
+            onChange={handleChange} 
+            type="text"
+            placeholder="buscar"
+            value={dog.name}
+           
+           />
+           <button onClick={(e) =>handleSubmit(e)}>buscar</button>
+
+           </div>
+       
     </div>
   )
 }

@@ -1,11 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { allDogs } from "../redux/Actions/actions";
+import { allDogs,getNameDog } from "../redux/Actions/actions";
 import Cards from "../cards/Cards";
+import SearchBar from '../searchbar/SearchBar'
+import style from './HomePage.module.css'
 
 export default function HomePage() {
   const dispatch = useDispatch();
   const todosLosPerros = useSelector((state) => state.allDogs);
+  
 
   // Cargar los perros al iniciar
   useEffect(() => {
@@ -13,11 +16,14 @@ export default function HomePage() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div >
       <h1>HOME PAGE</h1>
-      <div className="container">
-        <Cards dogs={todosLosPerros} />
+      <div>
+        <SearchBar/>
       </div>
+      <div>
+{       <Cards dogs={todosLosPerros} />
+}      </div>
     </div>
   );
 }
