@@ -16,21 +16,26 @@ async function idRaza(req, res) {
           height, 
           life_span,
           temperament,
+          bred_for,
+          breed_group,
           reference_image_id,
-          } = response.data;
+      } = response.data;
       
       // Convertir el rango de peso e altura imperial a números
       const returnDog = {
           id,
           nombre: name,
-          peso : height.imperial,
-          altura: weight.imperial,
+          peso : weight.imperial,
+          altura: height.imperial,
           anosDeVida: life_span,
           temperamento: temperament,
+          uso: bred_for,
+          grupo: breed_group,
           imagen: `https://cdn2.thedogapi.com/images/${reference_image_id}.jpg`,
-        };
-        console.log(returnDog);
-      // Filtra los perros que coincidan exactamente con el nombre buscado
+      };
+
+      console.log(returnDog);
+      
       return res.status(200).json(returnDog);
     }
 

@@ -57,7 +57,7 @@ async function GetDogsName(req, res) {
                 temperamento: temperament,
                 imagen: `https://cdn2.thedogapi.com/images/${reference_image_id}.jpg`,
               };
-
+              console.log(returnDog);
             // Filtra los perros que coincidan exactamente con el nombre buscado
             return res.status(200).json([returnDog]);
         }
